@@ -14,7 +14,7 @@ public class CookieLoginServlet extends HttpServlet {
     response.setContentType("text/html");
     PrintWriter out = response.getWriter();
 
-    request.getRequestDispatcher("link.html").include(request, response);
+    request.getRequestDispatcher("link-cookie.jsp").include(request, response);
 
     String name = request.getParameter("name");
     String password = request.getParameter("password");
@@ -27,7 +27,7 @@ public class CookieLoginServlet extends HttpServlet {
       response.addCookie(ck);
     } else {
       out.print("sorry, username or password error!");
-      request.getRequestDispatcher("login.html").include(request, response);
+      request.getRequestDispatcher("login-cookie.jsp").include(request, response);
     }
 
     out.close();

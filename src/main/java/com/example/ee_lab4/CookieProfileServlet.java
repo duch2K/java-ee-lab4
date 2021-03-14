@@ -13,21 +13,31 @@ public class CookieProfileServlet extends HttpServlet {
     response.setContentType("text/html");
     PrintWriter out = response.getWriter();
 
-    request.getRequestDispatcher("link.html").include(request, response);
+    request.getRequestDispatcher("link-cookie.jsp").include(request, response);
 
     Cookie ck[] = request.getCookies();
 
     if (ck != null) {
-      String name = ck[0].getValue();
+      String name = "";
 
-      if (!name.equals("") || name != null) {
+      for (Cookie c : ck) {
+        if (c.getName().equals("name")) {
+          name = c.getValue();
+        }
+      }
+
+      if (name.equals("") || name == null) {
+        out.print("Please login first");
+        request.getRequestDispatcher("login-cookie.jsp").include(request, response);
+
+      } else {
         out.print("<b>Welcome to Profile</b>");
         out.print("<br>Welcome, " + name);
       }
 
     } else {
       out.print("Please login first");
-      request.getRequestDispatcher("login.html").include(request, response);
+      request.getRequestDispatcher("login-cookie.jsp").include(request, response);
     }
     out.close();
   }

@@ -11,11 +11,11 @@ public class HiddenFirstServlet extends HttpServlet {
       PrintWriter out = response.getWriter();
 
       String n = request.getParameter("userName");
-      out.print("Welcome "+n);
+      out.print("Welcome " + n);
 
       //creating form that have invisible textfield
-      out.print("<form action='servlet2'>");
-      out.print("<input type='hidden' name='uname' value='"+n+"'>");
+      out.print("<form action='h2'>");
+      out.print("<input type='hidden' name='uname' value='" + n + "'>");
       out.print("<input type='submit' value='go'>");
       out.print("</form>");
       out.close();

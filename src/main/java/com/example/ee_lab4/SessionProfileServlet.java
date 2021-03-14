@@ -13,7 +13,7 @@ public class SessionProfileServlet extends HttpServlet {
             throws ServletException, IOException {
     response.setContentType("text/html");
     PrintWriter out = response.getWriter();
-    request.getRequestDispatcher("link.html").include(request, response);
+    request.getRequestDispatcher("link-session.jsp").include(request, response);
 
     HttpSession session = request.getSession(false);
     if (session != null) {
@@ -22,7 +22,7 @@ public class SessionProfileServlet extends HttpServlet {
 
     } else {
       out.print("Please login first");
-      request.getRequestDispatcher("login.html").include(request, response);
+      request.getRequestDispatcher("login-session.jsp").include(request, response);
     }
     out.close();
   }

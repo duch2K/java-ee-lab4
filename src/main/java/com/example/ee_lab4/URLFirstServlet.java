@@ -16,7 +16,7 @@ public class URLFirstServlet extends HttpServlet {
       out.print("Welcome " + n);
 
       //appending the username in the query string
-      out.print("<a href='servlet2?uname=" + n + "'>visit</a>");
+      out.print("<a href='url2?uname=" + n + "'>visit</a>");
 
       out.close();
 

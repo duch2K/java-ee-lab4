@@ -15,7 +15,7 @@ public class CookieLogoutServlet extends HttpServlet {
     PrintWriter out = response.getWriter();
 
 
-    request.getRequestDispatcher("link.html").include(request, response);
+    request.getRequestDispatcher("link-cookie.jsp").include(request, response);
 
     Cookie ck = new Cookie("name","");
     ck.setMaxAge(0);

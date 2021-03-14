@@ -5,6 +5,8 @@
     <title>Login</title>
 </head>
 <body>
+    <jsp:include page="link-cookie.jsp" />
+    <br>
     <form action="LoginServlet" method="post">
         Name:<input type="text" name="name"><br>
         Password:<input type="password" name="password"><br>
